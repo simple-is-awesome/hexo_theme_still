@@ -2,6 +2,11 @@
 
 Still is a quiet, typography-first theme for Hexo personal blogs. It uses one responsive grid, one system-font stack, one accent color, and a small amount of dependency-free JavaScript.
 
+[Live demo](https://simple-is-awesome.github.io/hexo_theme_still/)
+
+> [!NOTE]
+> This is a work by GPT 5.6 Sol Ultra.
+
 ## Features
 
 - Responsive journal, post, page, archive, category, and tag layouts

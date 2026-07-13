@@ -1,0 +1,35 @@
+menu:
+  Journal: /
+  About: /about/
+  Archive: /archives/
+  Search: /search/
+
+intro: A quieter place for words on the web.
+intro_note: Still pairs restrained typography with thoughtful details, responsive layouts, and no front-end framework.
+
+date_format: MMMM DD, YYYY
+show_updated: true
+show_reading_time: true
+reading_speed: 220
+home_excerpt: true
+excerpt_length: 180
+
+dark_mode: true
+favicon: /favicon.svg
+rss: /atom.xml
+
+footer:
+  since: 2026
+  text: A live preview of the Still Hexo theme.
+
+social:
+  GitHub: https://github.com/simple-is-awesome/hexo_theme_still
+
+search:
+  enabled: true
+  index_path: search.json
+  page_path: search/index.html
+  max_results: 20
+
+comments:
+  provider:

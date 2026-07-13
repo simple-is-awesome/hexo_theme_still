@@ -1,0 +1,28 @@
+title: Still
+subtitle: Notes on design, code, and the quiet details.
+description: A live preview of the Still typography-first theme for Hexo.
+author: Still
+language: en
+timezone: UTC
+
+url: https://simple-is-awesome.github.io/hexo_theme_still
+root: /hexo_theme_still/
+permalink: journal/:title/
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
+
+theme: still
+per_page: 1
+pagination_dir: page
+
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: "  "
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20

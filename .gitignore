@@ -1,0 +1,6 @@
+/demo/.deploy_git/
+/demo/db.json
+/demo/node_modules/
+/demo/public/
+/demo/preview-root/
+/demo/themes/
