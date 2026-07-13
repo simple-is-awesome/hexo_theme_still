@@ -1,0 +1,27 @@
+<%
+  const archiveTitle = page.tag || page.category || __('archive_title');
+  const archiveKind = page.tag ? __('tagged') : (page.category ? 'Category' : __('menu.archive'));
+  let currentYear = null;
+%>
+<header class="page-header">
+  <p class="eyebrow"><%= archiveKind %></p>
+  <h1><%= archiveTitle %></h1>
+  <p><%= page.posts.length %> <%= __('archive_description') %></p>
+</header>
+
+<div class="archive">
+  <% page.posts.each(function(post, index) {
+    const year = date(post.date, 'YYYY');
+    if (year !== currentYear) {
+      if (currentYear !== null) { %></ol></section><% }
+      currentYear = year;
+  %>
+    <section class="archive-year" aria-labelledby="year-<%= year %>">
+      <h2 id="year-<%= year %>"><%= year %></h2>
+      <ol class="post-list">
+  <% } %>
+        <%- partial('_partial/post-row', { post: post, index: index }) %>
+  <% }); %>
+  <% if (currentYear !== null) { %></ol></section><% } %>
+  <%- partial('_partial/pagination') %>
+</div>

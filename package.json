@@ -1,0 +1,29 @@
+{
+  "name": "hexo-theme-still",
+  "version": "1.0.0",
+  "description": "A quiet, typography-first Hexo theme for personal blogs.",
+  "keywords": [
+    "hexo",
+    "theme",
+    "blog",
+    "minimal",
+    "responsive"
+  ],
+  "license": "MIT",
+  "files": [
+    "_config.yml",
+    "languages",
+    "layout",
+    "scripts",
+    "source",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "hexo": ">=7.0.0",
+    "hexo-renderer-ejs": ">=2.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

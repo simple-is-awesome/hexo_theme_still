@@ -1,0 +1,16 @@
+<%
+  const startYear = theme.footer && theme.footer.since;
+  const currentYear = new Date().getFullYear();
+  const years = startYear && Number(startYear) < currentYear ? `${startYear}–${currentYear}` : currentYear;
+  const social = theme.social || {};
+%>
+<footer class="site-footer shell">
+  <p>© <%= years %> <%= config.author || config.title || 'Still' %>.<% if (theme.footer && theme.footer.text) { %> <%= theme.footer.text %><% } %></p>
+  <nav aria-label="Footer navigation">
+    <% Object.entries(social).forEach(function([label, href]) { %>
+      <% if (href) { %><a href="<%= href %>"<% if (/^https?:/.test(href)) { %> target="_blank" rel="noopener noreferrer me"<% } %>><%= label %></a><% } %>
+    <% }); %>
+    <% if (theme.rss) { %><a href="<%- url_for(theme.rss) %>">RSS</a><% } %>
+    <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer"><%= __('powered_by') %></a>
+  </nav>
+</footer>

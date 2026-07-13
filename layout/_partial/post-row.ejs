@@ -1,0 +1,10 @@
+<li class="post-row" style="--row:<%= index || 0 %>">
+  <span class="post-arrow" aria-hidden="true">→</span>
+  <div class="post-row__content">
+    <a href="<%- url_for(post.path) %>"><%= post.title || 'Untitled' %></a>
+    <% if (theme.home_excerpt && (post.excerpt || post.content)) { %>
+      <p><%= truncate(strip_html(post.excerpt || post.content).replace(/\s+/g, ' ').trim(), { length: theme.excerpt_length || 180 }) %></p>
+    <% } %>
+  </div>
+  <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, theme.date_format || config.date_format) %></time>
+</li>

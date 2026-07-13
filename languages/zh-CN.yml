@@ -1,0 +1,31 @@
+skip_to_content: 跳到正文
+menu:
+  journal: 文章
+  about: 关于
+  archive: 归档
+  search: 搜索
+latest_writing: 最新文章
+view_all: 查看全部
+archive_title: 所有文字，依次排列。
+archive_description: 篇文章，按时间从新到旧排列。
+search_title: 找到有用的片段。
+search_description: 搜索标题、摘要、标签和正文；所有操作均在浏览器本地完成。
+search_placeholder: 输入关键词
+search_clear: 清除
+search_empty: 没有找到匹配内容，请尝试更宽泛的关键词。
+search_prompt: 输入关键词以搜索文章。
+search_unavailable: 搜索暂时不可用。
+result: 条结果
+results: 条结果
+previous_post: 上一篇
+next_post: 下一篇
+reading_time: 分钟阅读
+updated: 更新于
+tagged: 标签
+theme_light: 使用浅色主题
+theme_dark: 使用深色主题
+powered_by: 由 Hexo 驱动
+download_theme: 下载主题
+not_found_title: 这个页面走丢了。
+not_found_text: 页面地址可能已经改变。
+back_home: 返回文章列表

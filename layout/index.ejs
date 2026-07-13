@@ -1,0 +1,24 @@
+<% if (is_home_first_page()) { %>
+  <section class="home-intro" aria-labelledby="intro-title">
+    <h1 id="intro-title"><%= theme.intro || config.description %></h1>
+    <% if (theme.intro_note) { %><p><%= theme.intro_note %></p><% } %>
+  </section>
+<% } else { %>
+  <header class="page-header compact-header">
+    <p class="eyebrow"><%= __('menu.journal') %></p>
+    <h1><%= config.title %></h1>
+  </header>
+<% } %>
+
+<section class="writing" aria-labelledby="latest-title">
+  <div class="section-heading">
+    <h2 id="latest-title"><%= __('latest_writing') %></h2>
+    <a href="<%- url_for('/archives/') %>"><%= __('view_all') %></a>
+  </div>
+  <ol class="post-list">
+    <% page.posts.each(function(post, index) { %>
+      <%- partial('_partial/post-row', { post: post, index: index }) %>
+    <% }); %>
+  </ol>
+  <%- partial('_partial/pagination') %>
+</section>

@@ -1,0 +1,35 @@
+<article>
+  <header class="article-header">
+    <div class="article-header__meta">
+      <time datetime="<%= date_xml(page.date) %>"><%= date(page.date, theme.date_format || config.date_format) %></time>
+      <% if (theme.show_reading_time) { %><span><%= reading_time(page.content, theme.reading_speed) %> <%= __('reading_time') %></span><% } %>
+      <% if (theme.show_updated && page.updated && date_xml(page.updated) !== date_xml(page.date)) { %>
+        <span><%= __('updated') %> <%= date(page.updated, theme.date_format || config.date_format) %></span>
+      <% } %>
+    </div>
+    <h1><%= page.title %></h1>
+    <% if (page.description || page.excerpt) { %><p class="article-header__dek"><%= strip_html(page.description || page.excerpt) %></p><% } %>
+  </header>
+
+  <div class="prose">
+    <%- page.content %>
+    <% if (page.tags && page.tags.length) { %>
+      <nav class="article-tags" aria-label="<%= __('tagged') %>">
+        <% page.tags.each(function(tag) { %><a href="<%- url_for(tag.path) %>">#<%= tag.name %></a><% }); %>
+      </nav>
+    <% } %>
+  </div>
+</article>
+
+<% if (page.prev || page.next) { %>
+  <nav class="post-navigation" aria-label="Adjacent posts">
+    <% if (page.prev) { %>
+      <a href="<%- url_for(page.prev.path) %>"><small><%= __('previous_post') %></small><span>← <%= page.prev.title %></span></a>
+    <% } else { %><span></span><% } %>
+    <% if (page.next) { %>
+      <a href="<%- url_for(page.next.path) %>"><small><%= __('next_post') %></small><span><%= page.next.title %> →</span></a>
+    <% } %>
+  </nav>
+<% } %>
+
+<%- partial('_partial/comments') %>

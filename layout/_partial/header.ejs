@@ -1,0 +1,24 @@
+<%
+  const menu = theme.menu || {};
+  const currentPath = page.path || '';
+%>
+<header class="site-header shell">
+  <a class="wordmark" href="<%- url_for('/') %>" aria-label="<%= config.title || 'Still' %>, home">
+    <%= config.title || 'Still' %>
+  </a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <% Object.entries(menu).forEach(function([label, href]) {
+      const normalized = String(href).replace(/^\//, '');
+      const active = href === '/' ? is_home() : currentPath.startsWith(normalized);
+      const translation = __(`menu.${String(label).toLowerCase()}`);
+      const text = translation.startsWith('menu.') ? label : translation;
+    %>
+      <a href="<%- url_for(href) %>"<% if (active) { %> class="is-active" aria-current="page"<% } %>><%= text %></a>
+    <% }); %>
+    <% if (theme.dark_mode) { %>
+      <button class="theme-toggle" type="button" data-theme-toggle data-light-label="<%= __('theme_light') %>" data-dark-label="<%= __('theme_dark') %>" aria-label="<%= __('theme_dark') %>" aria-pressed="false">
+        <span class="theme-toggle__mark" aria-hidden="true"></span>
+      </button>
+    <% } %>
+  </nav>
+</header>

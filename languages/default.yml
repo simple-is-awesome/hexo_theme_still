@@ -1,0 +1,31 @@
+skip_to_content: Skip to content
+menu:
+  journal: Journal
+  about: About
+  archive: Archive
+  search: Search
+latest_writing: Latest writing
+view_all: View all
+archive_title: Every note, in order.
+archive_description: pieces of writing, with the newest first.
+search_title: Find a useful fragment.
+search_description: Search titles, summaries, tags, and article text. Everything stays in your browser.
+search_placeholder: Type to search
+search_clear: Clear
+search_empty: Nothing matched that phrase. Try a broader word.
+search_prompt: Start typing to search the journal.
+search_unavailable: Search is temporarily unavailable.
+result: result
+results: results
+previous_post: Previous
+next_post: Next
+reading_time: min read
+updated: Updated
+tagged: Tagged
+theme_light: Use light theme
+theme_dark: Use dark theme
+powered_by: Made for Hexo
+download_theme: Download theme
+not_found_title: This page wandered off.
+not_found_text: The address may have changed.
+back_home: Return to the journal

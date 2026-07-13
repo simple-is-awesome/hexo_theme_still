@@ -1,0 +1,57 @@
+# Still theme configuration
+
+menu:
+  Journal: /
+  About: /about/
+  Archive: /archives/
+  Search: /search/
+
+intro: Notes on design, code, and the quiet details.
+intro_note: A minimal personal blog for essays, field notes, and the occasional useful fragment.
+
+date_format: MMMM DD, YYYY
+show_updated: true
+show_reading_time: true
+reading_speed: 220
+home_excerpt: false
+excerpt_length: 180
+
+dark_mode: true
+favicon: /favicon.svg
+rss: /atom.xml
+
+footer:
+  since: 2026
+  text: Words, slowly gathered.
+
+# Add only the links you use.
+social:
+  # GitHub: https://github.com/username
+  # Mastodon: https://example.social/@username
+  # Email: mailto:hello@example.com
+
+search:
+  enabled: true
+  index_path: search.json
+  page_path: search/index.html
+  max_results: 20
+
+# Optional Giscus comments. Leave provider empty to keep comments disabled.
+comments:
+  provider:
+  giscus:
+    repo:
+    repo_id:
+    category: General
+    category_id:
+    mapping: pathname
+    reactions_enabled: true
+    emit_metadata: false
+    input_position: top
+    theme: preferred_color_scheme
+    lang: en
+    loading: lazy
+
+# Optional custom HTML injected just before </body>.
+# Useful for privacy-friendly analytics or a self-hosted script.
+custom_body:

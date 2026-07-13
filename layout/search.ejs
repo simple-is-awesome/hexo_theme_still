@@ -1,0 +1,18 @@
+<header class="page-header">
+  <p class="eyebrow"><%= __('menu.search') %></p>
+  <h1><%= __('search_title') %></h1>
+  <p><%= __('search_description') %></p>
+</header>
+
+<section class="search-panel" data-search-root data-index="<%- url_for((theme.search && theme.search.index_path) || 'search.json') %>" data-limit="<%= (theme.search && theme.search.max_results) || 20 %>" data-label-prompt="<%= __('search_prompt') %>" data-label-result="<%= __('result') %>" data-label-results="<%= __('results') %>" data-label-unavailable="<%= __('search_unavailable') %>">
+  <form class="search-form" role="search" data-search-form>
+    <label>
+      <span class="sr-only"><%= __('menu.search') %></span>
+      <input type="search" autocomplete="off" placeholder="<%= __('search_placeholder') %>" data-search-input>
+    </label>
+    <button type="button" data-search-clear hidden><%= __('search_clear') %></button>
+  </form>
+  <div class="search-meta" aria-live="polite" data-search-meta><%= __('search_prompt') %></div>
+  <ol class="search-results" data-search-results></ol>
+  <p class="empty-state" data-search-empty hidden><%= __('search_empty') %></p>
+</section>

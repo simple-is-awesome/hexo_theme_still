@@ -1,0 +1,42 @@
+<%
+  const siteTitle = config.title || 'Still';
+  const titleText = page.title ? `${page.title} — ${siteTitle}` : siteTitle;
+  const rawDescription = page.description || page.excerpt || config.description || theme.intro_note || '';
+  const descriptionText = truncate(strip_html(rawDescription).replace(/\s+/g, ' ').trim(), { length: 180 });
+  const canonicalPath = String(page.path || '').replace(/index\.html$/, '');
+  const canonicalUrl = full_url_for(canonicalPath);
+  const language = page.lang || page.language || config.language || 'en';
+%>
+<!doctype html>
+<html lang="<%= language %>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title><%= titleText %></title>
+    <% if (descriptionText) { %><meta name="description" content="<%= descriptionText %>"><% } %>
+    <link rel="canonical" href="<%= canonicalUrl %>">
+    <meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+    <meta property="og:title" content="<%= titleText %>">
+    <% if (descriptionText) { %><meta property="og:description" content="<%= descriptionText %>"><% } %>
+    <meta property="og:url" content="<%= canonicalUrl %>">
+    <meta property="og:site_name" content="<%= siteTitle %>">
+    <meta name="twitter:card" content="summary">
+    <% if (theme.favicon) { %><link rel="icon" href="<%- url_for(theme.favicon) %>"><% } %>
+    <% if (theme.rss) { %><%- feed_tag(theme.rss) %><% } %>
+    <%- css('css/style.css') %>
+    <% if (theme.dark_mode) { %>
+      <script>
+        try{const s=localStorage.getItem('still-color-mode');const d=s==='dark'||(!s&&matchMedia('(prefers-color-scheme:dark)').matches);document.documentElement.dataset.theme=d?'dark':'light'}catch(e){}
+      </script>
+    <% } %>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content"><%= __('skip_to_content') %></a>
+    <%- partial('_partial/header') %>
+    <main class="shell" id="main-content"><%- body %></main>
+    <%- partial('_partial/footer') %>
+    <%- js('js/still.js') %>
+    <% if (theme.custom_body) { %><%- theme.custom_body %><% } %>
+  </body>
+</html>
