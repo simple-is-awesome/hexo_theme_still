@@ -5,7 +5,7 @@ Still is a quiet, typography-first theme for Hexo personal blogs. It uses one re
 [Live demo](https://simple-is-awesome.github.io/hexo_theme_still/)
 
 > [!NOTE]
-> This is a work by GPT 5.6 Sol Ultra.
+> This is a work by GPT 5.6 Sol Max.
 
 ## Features
 
